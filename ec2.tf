@@ -1,7 +1,8 @@
-resource "aws_instance" "myec2vm" {
-  ami = "ami-0c7217cdde317cfec"
-  instance_type = "t3.micro"
-  tags = {
-    "Name" = "EC2 Demo1"
-  }
+resource "aws_instance" "public_instance" {
+ ami           = var.ami
+ instance_type = var.instance_type
+
+ tags = {
+   Name = var.name_tag,
+ }
 }
