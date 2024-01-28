@@ -1,6 +1,5 @@
 pipeline {
     agent any
-
     stages {
         stage('Checkout') {
             steps {
@@ -12,11 +11,16 @@ pipeline {
                 sh 'terraform init'
             }
         }
-        stage('Terraform apply') {
+        stage('Terraform validate') {
             steps {
-                sh 'terraform apply --auto-approve'
+                sh 'terraform validate'
             }
         }
-        
+        stage('Terraform plan') {
+            steps {
+                sh 'terraform plan'
+            }
+        }
+      
     }
 }
