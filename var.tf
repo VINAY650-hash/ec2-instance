@@ -1,10 +1,3 @@
-variable "aws_access_key" {
-  description = "AWS access key"
-  type        = string
-  default     = ""
-}
-
-
 variable "aws_region" {
   description = "AWS region"
   type        = string
@@ -15,7 +8,7 @@ variable "aws_region" {
 variable "ami" {
    type        = string
    description = "Ubuntu AMI ID"
-   default     = "ami-0f5ee92e2d63afc18"
+   default     = "ami-0a3c3a20c09d6f377"
 }
 
 variable "instance_type" {
