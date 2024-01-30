@@ -1,8 +1,8 @@
-resource "aws_instance" "public_instance" {
- ami           = ami = data.aws_ami.amzlinux2.id
- instance_type = var.instance_type
+provider "aws" {
+    region = "us-east-1"  
+}
 
- tags = {
-   Name = var.name_tag,
- }
+resource "aws_instance" "foo" {
+  ami           = "ami-0a3c3a20c09d6f377" # us-west-2
+  instance_type = "t2.micro"  
 }
